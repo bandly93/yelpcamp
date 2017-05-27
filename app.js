@@ -14,10 +14,20 @@ var express       = require("express"),
 var commentRoutes = require('./routes/comments'),
     campgroundsRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
-    
+  
+  
+var url = process.env.DATABASEURL || "mongodb://localhost/YelpCampDB"  
+
+
+mongoose.connect(url)
 //connect to the database  
 //mongoose.connect("mongodb://localhost/YelpCampDB");
 mongoose.connect("mongodb://bandly93:183592bb@ds155191.mlab.com:55191/yelpcamp");
+
+
+
+
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -53,5 +63,5 @@ app.use("/",indexRoutes);
 
 //The server that is this app is connected to.
 app.listen(process.env.PORT,process.env.IP,function(){
-    console.log("Server is running!")
+    console.log("Server is running!");
 }); 
