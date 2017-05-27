@@ -19,10 +19,10 @@ var commentRoutes = require('./routes/comments'),
 var url = process.env.DATABASEURL || "mongodb://localhost/YelpCampDB"  
 
 
-mongoose.connect(url)
+mongoose.connect(url);
 //connect to the database  
 //mongoose.connect("mongodb://localhost/YelpCampDB");
-mongoose.connect("mongodb://bandly93:183592bb@ds155191.mlab.com:55191/yelpcamp");
+//mongoose.connect("mongodb://bandly93:183592bb@ds155191.mlab.com:55191/yelpcamp");
 
 
 
